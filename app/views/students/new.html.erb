@@ -1,0 +1,21 @@
+<h1>New Student</h1>
+
+<%= render 'form', student: @student %>
+
+
+<br>
+
+<h1>This is second create</h1>
+<%= render 'form', student: @student %>
+
+<%
+=begin %>
+<%= number_to_human(1234)<br>
+<%= number_to_human_size(1234)%>
+
+<%= number_to_percentage(90, precision: 2) %><br>
+<%= number_to_phone(12345678)%><br>
+<%= number_with_delimiter(12345678)%><br>
+<%= number_with_precision(111.2345) %> 
+<%
+=end %>
