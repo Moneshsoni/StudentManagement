@@ -1,0 +1,79 @@
+<h1>Addition value </h1>
+
+<%= @add %>
+
+<h1>Test Active support</h1>
+<%= "hello".from(1) %><br>
+<%= "foo".starts_with?("f") %>
+
+<h1>plurize</h1>
+<%= "work".pluralize%>
+
+<h1>Dashrize</h1>
+<%="monesh_soni".dasherize%>
+
+<h1>Tablize</h1>
+<%= "Invoice".tableize %>
+<h1>Capitilize</h1>
+<%= "monesh".humanize  %>
+
+<h1>Foreign key</h1>
+<%= "User".foreign_key%>
+<h1>Date</h1>
+<%= "2010-07-27".to_datetime %>
+<h1>Time</h1>
+<%= 1.day.from_now %>
+
+<h1>Phone</h1>
+<%# <%= 5551234.to_fs(:phone)%> %>
+<h1>Titalize</h1>
+<%= "alice in wonderland".titleize%>
+
+<h1>Week</h1>
+<%= 2.weeks.from_now%>
+<h1>Ordinize</h1>
+
+<%= 2.ordinalize%>
+
+<h1>Month</h1>
+<%=(4.months + 5.years).from_now%>
+
+<h1>Decimal</h1>
+<%= BigDecimal(5.00, 6).to_s   %>
+<h1>Including</h1>
+<%= [ 1, 2, 3 ].including(4, 5)   %>
+<h1>Excluding</h1>
+<%= ["David", "Rafael", "Aaron", "Todd"].excluding("Aaron", "Todd")%>
+
+<h1>Pluck</h1>
+<%= [{ name: "monesh" }, { name: "sanjay    " }, { name: "Aaron" }].pluck(:name)%>
+
+<h1>Sentence</h1>
+<%= %w(Monesh is the RoR Coder).to_sentence %>
+
+<h1>Group</h1>
+<%= [1, 2, 3].in_groups_of(1, false) %>
+<br>
+<%= %w(1 2 3 4 5 6 7).in_groups(1)%>
+<br>
+
+<%= %w(1 2 3 4 5 6 7).in_groups(3, "0")%>
+
+<h1>Split</h1>
+<%= (1..5).to_a.split("monesh")%>
+
+<h1>Today and tommorow</h1>
+<%=(Date.today..Date.tomorrow).to_s%>
+<h1>Week</h1>
+<%date = Date.new(2010, 6, 7) %>
+<%=date.years_ago(10)%>
+
+<h1>Start Date & End Date</h1>
+<%date = Date.new(2010, 6, 7)%>
+<%=date.end_of_day%>
+
+<h1>Time Zone</h1>
+<%now = DateTime.current%>
+<%= now.gmtime()%>
+<%= Time.now.to_date%>
+

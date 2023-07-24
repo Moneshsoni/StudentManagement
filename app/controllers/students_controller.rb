@@ -1,6 +1,14 @@
 class StudentsController < ApplicationController
+  # skip_before_actrion :require_me, only: [:new, :create]
+
   def index
+    binding.pry
     @students = Student.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @students }
+      format.json { render json: @students }
+    end
   end
 
   def new 
@@ -53,10 +61,24 @@ class StudentsController < ApplicationController
   end
 
 
+  def greet
+    @message = "Hello, World!"
+  end
+
+  def add 
+    @add = 1000+2000
+  end
+
   private
 
   def student_params
     params.require(:student).permit(:first_name,:last_name,:email)
   end
+
+  def require_me
+    puts "required"
+  end
 end
+
+
 

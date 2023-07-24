@@ -11,7 +11,28 @@ Rails.application.routes.draw do
   get 'moso', action: :index, controller: 'students'
 
   resources :students
+  
+  get '/greet', to: 'students#greet'
+  get 'add',  to: 'students#add'
+  # scope "api/v1" do 
+  #   resources :users
+  # end
 
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :users do
+  #       get "status_update", on: :collection
+  #     end
+  #   end
+  #   namespace :v2 do
+  #     resources :users
+  #   end
+  # end
+
+  resources "users" do
+    resources "orders" 
+  end
+  
   #With namespace
   # namespace :admin do
   #   resources :articles, :comments
