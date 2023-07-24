@@ -1,8 +1,7 @@
 class StudentsController < ApplicationController
   # skip_before_actrion :require_me, only: [:new, :create]
 
-  def index
-    binding.pry
+  def index 
     @students = Student.all
     respond_to do |format|
       format.html # index.html.erb
