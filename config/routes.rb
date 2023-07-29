@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :courses
   # get 'welcome/index'
-  root 'welcome#index'
+  root 'students#index'
   # put "/students/:id", to: "students#update_student"
   get '/update_student/:id', to: 'students#update_student', as: "update_student"
   put '/updating_student_details/:id', to: 'students#updating_student_details', as: "updating_student_details"
