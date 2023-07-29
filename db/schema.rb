@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_24_120624) do
+ActiveRecord::Schema.define(version: 2023_07_29_162054) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -36,6 +36,29 @@ ActiveRecord::Schema.define(version: 2023_07_24_120624) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "manager_histories", force: :cascade do |t|
+    t.date "start_time"
+    t.integer "manager_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["manager_id"], name: "index_manager_histories_on_manager_id"
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.string "name"
+    t.string "designation"
+    t.integer "department_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_managers_on_department_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -79,6 +102,8 @@ ActiveRecord::Schema.define(version: 2023_07_24_120624) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "manager_histories", "managers"
+  add_foreign_key "managers", "departments"
   add_foreign_key "student_projects", "projects"
   add_foreign_key "student_projects", "students"
   add_foreign_key "sub_demos", "demos"
