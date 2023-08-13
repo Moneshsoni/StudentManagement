@@ -4,23 +4,24 @@
         <p><%= message%></p>
      <%end%>
     <%end%>
-    <div>
-        <%= form.label :first_name%><br>
-        <%= form.text_field :first_name%>
+    <div class = "form-group">
+        <%= form.label :first_name%>
+        <%= form.text_field :first_name, class: "form-control form-control-lg"%>
     </div>
 
-    <div>
-        <%= form.label :last_name%><br>
-        <%= form.text_field :last_name%>
+    <div class = "form-group">
+        <%= form.label :last_name%>
+        <%= form.text_field :last_name,  class: "form-control form-control-lg"%>
     </div>
 
-    <div>
-        <%= form.label :Email%><br>
-        <%= form.email_field :email%>
+    <div class = "form-group">
+        <%= form.label :Email%>
+        <%= form.email_field :email , class: "form-control form-control-lg"%>
     </div>
    
-    <div>
-    <%= form.submit %>
+    <div class = "form-group">
+    <br>
+    <center><%= form.submit %></center>
     </div>
     <br> 
 

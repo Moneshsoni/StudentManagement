@@ -10,4 +10,12 @@ class Student < ApplicationRecord
     def display_greetings
         puts "Hello, You executed before action callback!", 1000+12212
     end
+
+    def full_name
+        "#{first_name} #{last_name}"
+    end
+
+    def name_with_email
+        "#{first_name} #{last_name} #{email}"
+    end
 end

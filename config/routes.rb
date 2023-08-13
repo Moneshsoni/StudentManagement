@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'moso', action: :index, controller: 'students'
 
   resources :students
+
+  namespace :admin do
+    resources :students
+  end
   
   get '/greet', to: 'students#greet'
   get 'add',  to: 'students#add'
