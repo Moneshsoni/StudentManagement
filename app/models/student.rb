@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-    paginates_per 2
+    paginates_per 3
     has_many :blogs
     has_and_belongs_to_many :courses
     has_many :student_projects
