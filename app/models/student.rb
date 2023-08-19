@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+    paginates_per 2
     has_many :blogs
     has_and_belongs_to_many :courses
     has_many :student_projects
@@ -18,4 +19,7 @@ class Student < ApplicationRecord
     def name_with_email
         "#{first_name} #{last_name} #{email}"
     end
+    
+
 end
+

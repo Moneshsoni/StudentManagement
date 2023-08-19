@@ -2,7 +2,8 @@ class StudentsController < ApplicationController
   # skip_before_actrion :require_me, only: [:new, :create]
 
   def index 
-    @students = Student.all
+    @q = Student.ransack(params[:q])
+    @students = @q.result(distinct: true).page(params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render xml: @students }

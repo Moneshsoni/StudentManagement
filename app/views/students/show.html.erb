@@ -1,7 +1,14 @@
-<strong><h1><%= notice%></h1></strong>
-<h1>Student Details</h1>
+<div class = "col-lg-10">
+<div class="card rounded-0 shadow mt-5 mb-6">
+  <div class = "card-body">
+    <strong><h1><%= notice%></h1></strong>
+    <h1>Student Details</h1>
 
-<p><strong>Name: </strong><%= @student.full_name%></p>
-<p><strong>Email: </strong><%= @student.email%></p>
+    <p><strong>Name: </strong><%= @student.full_name%></p>
+    <p><strong>Email: </strong><%= @student.email%></p>
 
-<%= link_to 'Back', students_path %> | <%= link_to 'update student', update_student_path(@student)%>
+    <%= link_to 'Back', students_path , class: "btn" %> 
+    <%= link_to 'update student', update_student_path(@student) , class: "btn btn-secondary"%>
+  </div>
+</div>
+</div>
